@@ -1,5 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 const backdropVariant = {
@@ -11,6 +12,20 @@ const backdropVariant = {
     }
 }
 
+const modalVariant = {
+    hidden: {
+        y: "-100vh",
+        opacity: 0
+    },
+    visible: {
+        y: "200px",
+        opacity: 1,
+        transition: {
+            delay: 0.5
+        }
+    },
+}
+
 const Modal = ({showModal, setShowModal}) => {
 
     return ( 
@@ -20,7 +35,16 @@ const Modal = ({showModal, setShowModal}) => {
                     variants = {backdropVariant}
                     initial = "hidden"
                     animate = "visible"
+                    exit = "hidden"
                 >
+                    <motion.div className = 'modal'
+                        variants={modalVariant}
+                    >
+                        <p>Want to make another pizza?</p>
+                        <Link to="/">
+                        <button>Start Again</button>
+                        </Link>
+                    </motion.div>
                 </motion.div>
             )}
         </AnimatePresence>

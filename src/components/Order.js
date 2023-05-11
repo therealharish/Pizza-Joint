@@ -38,7 +38,7 @@ const Order = ({ pizza, setShowModal }) => {
   useEffect(() => {
     setTimeout(() => {
       setShowModal(true)
-    }, 5000)
+    }, 3000)
   }, [setShowModal])
   return (
     <motion.div className="container order"

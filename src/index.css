@@ -114,3 +114,21 @@ li span.active::before{
   background: rgba(0,0,0,0.5);
   z-index: 100;
 }
+
+.modal {
+  width: 400px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  background: #FDE2F3;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.modal p{
+  color: #2A2F4F;
+}
+
+.modal button {
+  color: #2A2F4F;
+  border-color: #2A2F4F;
+}
